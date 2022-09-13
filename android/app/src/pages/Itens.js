@@ -5,19 +5,27 @@ const Itens = ({titulo, lista}) => {
   return (
     <>
       <Text style={styles.title}>{titulo}</Text>
-      {lista.map(list => (
-        <View style={styles.card} key={list.nome}>
-          <Image style={styles.image} source={list.imagem} />
-          <Text style={styles.nome}>{list.nome}</Text>
-        </View>
-      ))}
+      {lista.map(({nome, imagem}) => {
+        return (
+          <View style={styles.card} key={nome}>
+            <Image style={styles.image} source={imagem} />
+            <Text style={styles.nome}>{nome}</Text>
+          </View>
+        );
+      })}
     </>
   );
 };
 
 const styles = StyleSheet.create({
   title: {
-    paddingLeft: 15,
+    paddingLeft: 18,
+    paddingVertical: 15,
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#464646",
+    // fontWeight:'bold',
+    fontFamily:"Montserrat Bolds"
   },
   image: {
     width: 32,
@@ -30,7 +38,8 @@ const styles = StyleSheet.create({
   },
   card: {
     flexDirection: 'row',
-    paddingLeft: 14,
+    paddingLeft: 12,
+    paddingBottom: 10,
   },
 });
 

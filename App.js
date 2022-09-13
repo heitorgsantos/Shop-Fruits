@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import { ScrollView, View} from 'react-native';
 import PageMain from './android/app/src/pages/PageMain';
 import Topo from './android/app/src/pages/Topo';
 import fruits from "./android/app/src/mocks/fruits";
@@ -17,12 +17,12 @@ import fruits from "./android/app/src/mocks/fruits";
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <ScrollView>
       <View>
         <Topo />
         <PageMain {...fruits}/>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
